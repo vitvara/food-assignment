@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { Fragment, useState } from "react";
 import ReciepeSearchForm from "./ReciepeSearchForm";
 import Recipe from "./Recipe";
+import classes from "./RecipesList.module.css";
 
 const RecipesList = () => {
   const [recipesList, setRecipesList] = useState(null);
@@ -11,7 +12,7 @@ const RecipesList = () => {
       return "Not found";
     }
     return (
-      <Fragment>
+      <div className={classes["recipes-list"]}>
         {recipesList.map((recipe) => (
           <Recipe
             key={recipe.idMeal}
@@ -20,7 +21,7 @@ const RecipesList = () => {
             description={recipe.strInstructions}
           />
         ))}
-      </Fragment>
+      </div>
     );
   };
 
