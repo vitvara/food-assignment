@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import classes from "./RecipeSearchForm.module.css";
+import {Icon} from 'react-fa'
 
 const ReciepeSearchForm = (props) => {
   const [word, setWord] = useState("");
@@ -16,12 +18,15 @@ const ReciepeSearchForm = (props) => {
   return (
     <form onSubmit={searchHandler}>
       <input
+        className={classes['searchTerm']}
         type="text"
         value={word}
         onChange={wordChangeHandler}
         placeholder="search"
       />
-      <button type="submit">search</button>
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
     </form>
   );
 };
