@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { Fragment, useState } from "react";
-import Card from "../UI/Card";
 import ReciepeSearchForm from "./ReciepeSearchForm";
 import Recipe from "./Recipe";
 
@@ -18,6 +17,7 @@ const RecipesList = () => {
             key={recipe.idMeal}
             thumbNail={recipe.strMealThumb}
             title={recipe.strMeal}
+            description={recipe.strInstructions}
           />
         ))}
       </Fragment>
